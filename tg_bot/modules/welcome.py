@@ -95,9 +95,9 @@ def new_member(bot: Bot, update: Update):
                 #Allowed chats
                 a_chats = ['-1001167753017', '-1001206344294']
                 if str(chat.id) in a_chats:
-                    update.effective_message.reply_text("Hello Pocophone community!")
+                    update.effective_message.reply_text("Hello guys!")
                 else:
-                    update.effective_message.reply_text("It's not a pocophone official group. I go away.")
+                    update.effective_message.reply_text("It's not a right group. I go away.")
                     bot.send_sticker(chat.id, 'CAADAQADJwADkmY1IuiTMjVZ_RtuAg')
                     bot.leaveChat(chat.id)
 
