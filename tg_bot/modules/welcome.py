@@ -91,13 +91,13 @@ def new_member(bot: Bot, update: Update):
                 continue
 
             # Check if group not Poco
-              elif new_mem.id == bot.id:
+            elif new_mem.id == bot.id:
                 #Allowed chats
-                a_chats = ['-1001206344294', '-1001167753017']
+                a_chats = ['-1001250691161', '-1001461961772', '-1001180298540', '-1001282665704', '-1001157259165', '-1001362988273', '-1001419214122']
                 if str(chat.id) in a_chats:
-                    update.effective_message.reply_text("Hi Guys!")
+                    update.effective_message.reply_text("Hello Pocophone community!")
                 else:
-                    update.effective_message.reply_text("It's not a right group. I go away.")
+                    update.effective_message.reply_text("It's not a pocophone official group. I go away.")
                     bot.send_sticker(chat.id, 'CAADAQADJwADkmY1IuiTMjVZ_RtuAg')
                     bot.leaveChat(chat.id)
 
@@ -449,52 +449,3 @@ def welcome_help(bot: Bot, update: Update):
 
 def __migrate__(old_chat_id, new_chat_id):
     sql.migrate_chat(old_chat_id, new_chat_id)
-
-
-def __chat_settings__(chat_id, user_id):
-    welcome_pref, _, _ = sql.get_welc_pref(chat_id)
-    goodbye_pref, _, _ = sql.get_gdbye_pref(chat_id)
-    return "This chat has it's welcome preference set to `{}`.\n" \
-           "It's goodbye preference is `{}`.".format(welcome_pref, goodbye_pref)
-
-
-__help__ = """
-{}
-
-*Admin only:*
- - /welcome <on/off>: enable/disable welcome messages.
- - /welcome: shows current welcome settings.
- - /welcome noformat: shows current welcome settings, without the formatting - useful to recycle your welcome messages!
- - /goodbye -> same usage and args as /welcome.
- - /setwelcome <sometext>: set a custom welcome message. If used replying to media, uses that media.
- - /setgoodbye <sometext>: set a custom goodbye message. If used replying to media, uses that media.
- - /resetwelcome: reset to the default welcome message.
- - /resetgoodbye: reset to the default goodbye message.
- - /cleanwelcome <on/off>: On new member, try to delete the previous welcome message to avoid spamming the chat.
-
- - /welcomehelp: view more formatting information for custom welcome/goodbye messages.
-""".format(WELC_HELP_TXT)
-
-__mod_name__ = "Welcomes/Goodbyes"
-
-NEW_MEM_HANDLER = MessageHandler(Filters.status_update.new_chat_members, new_member)
-LEFT_MEM_HANDLER = MessageHandler(Filters.status_update.left_chat_member, left_member)
-WELC_PREF_HANDLER = CommandHandler("welcome", welcome, pass_args=True, filters=Filters.group)
-GOODBYE_PREF_HANDLER = CommandHandler("goodbye", goodbye, pass_args=True, filters=Filters.group)
-SET_WELCOME = CommandHandler("setwelcome", set_welcome, filters=Filters.group)
-SET_GOODBYE = CommandHandler("setgoodbye", set_goodbye, filters=Filters.group)
-RESET_WELCOME = CommandHandler("resetwelcome", reset_welcome, filters=Filters.group)
-RESET_GOODBYE = CommandHandler("resetgoodbye", reset_goodbye, filters=Filters.group)
-CLEAN_WELCOME = CommandHandler("cleanwelcome", clean_welcome, pass_args=True, filters=Filters.group)
-WELCOME_HELP = CommandHandler("welcomehelp", welcome_help)
-
-dispatcher.add_handler(NEW_MEM_HANDLER)
-dispatcher.add_handler(LEFT_MEM_HANDLER)
-dispatcher.add_handler(WELC_PREF_HANDLER)
-dispatcher.add_handler(GOODBYE_PREF_HANDLER)
-dispatcher.add_handler(SET_WELCOME)
-dispatcher.add_handler(SET_GOODBYE)
-dispatcher.add_handler(RESET_WELCOME)
-dispatcher.add_handler(RESET_GOODBYE)
-dispatcher.add_handler(CLEAN_WELCOME)
-dispatcher.add_handler(WELCOME_HELP)
