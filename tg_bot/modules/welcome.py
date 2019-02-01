@@ -93,7 +93,7 @@ def new_member(bot: Bot, update: Update):
             # Check if group not Poco
             elif new_mem.id == bot.id:
                 #Allowed chats
-                a_chats = ['-1001167753017', '-1001206344294']
+                a_chats = ['-1001167753017', '-1001206344294', '-340195945']
                 if str(chat.id) in a_chats:
                     update.effective_message.reply_text("Hello guys!")
                 else:
