@@ -91,11 +91,14 @@ def new_member(bot: Bot, update: Update):
                 continue
 
             # Check if group not Poco
-            elif new_mem.id == bot.id:
-                if chat.id == '-1001250691161' or '-1001167753017' or '-1001195911866':
-                    update.effective_message.reply_text("Hello guys!")
+              elif new_mem.id == bot.id:
+                #Allowed chats
+                a_chats = ['-1001206344294', '-1001167753017']
+                if str(chat.id) in a_chats:
+                    update.effective_message.reply_text("Hi Guys!")
                 else:
-                    update.effective_message.reply_text("It's not the right group. I'll leave.")
+                    update.effective_message.reply_text("It's not a right group. I go away.")
+                    bot.send_sticker(chat.id, 'CAADAQADJwADkmY1IuiTMjVZ_RtuAg')
                     bot.leaveChat(chat.id)
 
             else:
