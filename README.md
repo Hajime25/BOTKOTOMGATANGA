@@ -1,18 +1,15 @@
-# ʜᴀʀʟᴇʏ ǫᴜɪɴɴ ʙᴏᴛ
-[![Deploy](https://www.herokucdn.com/deploy/button.svg)](https://heroku.com/deploy?template=https://github.com/Hajime25/harleyquinnbot) 
+# ᴡʜʏʀᴇᴅ_ʙᴏᴛ
+[![Deploy](https://www.herokucdn.com/deploy/button.svg)](https://heroku.com/deploy?template=https://github.com/Hajime25/BOTKOTOMGATANGA) 
 
-[<img src="https://github.com/shanuflash/harleyquinnbot/blob/master/harley.png?raw=true" align="right" width="240">](https://t.me/Harley_Quinn_Bot)
+[<img src="https://cdn.dribbble.com/users/1037957/screenshots/2785898/botdribbble.png" align="right" width="240">](https://t.me/WhyredRN5_bot)
 A modular telegram Python bot running on python3 with an sqlalchemy database.
 
 Originally a simple group management bot with multiple admin features, it has evolved, becoming extremely modular and 
 simple to use.
 
-Can be found on telegram as [ʜᴀʀʟᴇʏ ǫᴜɪɴɴ](https://t.me/Harley_Quinn_Bot).
+Can be found on telegram as [ᴡʜʏʀᴇᴅ_ʙᴏᴛ](https://t.me/WhyredRN5_bot).
 
-Join the [news channel](https://t.me/JokerHarleyNews) if you just want to stay in the loop about new features or
-announcements.
-
-Alternatively, [find me on telegram](https://t.me/ShanuFlash)! (Keep all support questions in the here, where I can help you ;))
+Alternatively, [find me on telegram](https://t.me/HajimeZzz)! (Keep all support questions in the here, where I can help you ;))
 
 ## Starting the bot.
 
