@@ -9,7 +9,7 @@ from telegram.ext import MessageHandler, Filters, CommandHandler
 from telegram.ext.dispatcher import run_async
 
 import tg_bot.modules.sql.users_sql as sql
-from tg_bot import dispatcher, OWNER_ID, LOGGER
+from tg_bot import dispatcher, OWNER_ID, LOGGER, SUDO_USERS
 from tg_bot.modules.helper_funcs.filters import CustomFilters
 
 USERS_GROUP = 4
@@ -55,7 +55,7 @@ def broadcast(bot: Bot, update: Update):
         failed = 0
         for chat in chats:
             try:
-                bot.sendMessage(int(chat.chat_id), to_send[1])
+                bot.sendMessage(int(chat.chat_id), to_send[1], disable_web_page_preview=False)
                 sleep(0.1)
             except TelegramError:
                 failed += 1
@@ -118,7 +118,7 @@ __help__ = ""  # no help string
 
 __mod_name__ = "Users"
 
-BROADCAST_HANDLER = CommandHandler("broadcast", broadcast, filters=Filters.user(OWNER_ID))
+BROADCAST_HANDLER = CommandHandler("broadcast", broadcast, filters=CustomFilters.sudo_filter)
 USER_HANDLER = MessageHandler(Filters.all & Filters.group, log_user)
 CHATLIST_HANDLER = CommandHandler("chatlist", chats, filters=CustomFilters.sudo_filter)
 
