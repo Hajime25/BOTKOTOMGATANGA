@@ -1,4 +1,6 @@
 # ʜᴀʀʟᴇʏ ǫᴜɪɴɴ ʙᴏᴛ
+[![Deploy](https://www.herokucdn.com/deploy/button.svg)](https://heroku.com/deploy?template=https://github.com/Hajime25/harleyquinnbot) 
+
 [<img src="https://github.com/shanuflash/harleyquinnbot/blob/master/harley.png?raw=true" align="right" width="240">](https://t.me/Harley_Quinn_Bot)
 A modular telegram Python bot running on python3 with an sqlalchemy database.
 
